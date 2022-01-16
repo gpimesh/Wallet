@@ -1,9 +1,7 @@
 package com.leovegas.wallet.controller;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
+
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -33,6 +31,8 @@ import com.leovegas.wallet.utility.Constants;
 import com.leovegas.wallet.vo.TransactionRequestVO;
 import com.leovegas.wallet.vo.TransactionResponseVO;
 import com.leovegas.wallet.vo.UserVO;
+
+
 
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
