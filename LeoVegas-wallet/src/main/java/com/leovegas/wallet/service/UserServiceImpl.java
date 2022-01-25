@@ -46,12 +46,12 @@ public class UserServiceImpl implements UserService {
 			
 			// if no users with the given user name and email, we register the new user.
 			if(existingUserListfromDB.isEmpty()) {
-
+				
 				user.setModifiedAt(LocalDateTime.now());
 				user.setCreatedAt(LocalDateTime.now());
 				user.getAccount().setAccountNo(numberGenerator.getAccountNumber());
 				user.getAccount().setCreationUser(user.getUserID());
-
+				user.getAccount().setAccountOwner(user.getUserID());
 				return userRepo.save(user);
 
 			}else {
