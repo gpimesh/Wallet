@@ -31,7 +31,12 @@ public class Account extends AbstractEntity implements Serializable{
     @JsonProperty(access =  JsonProperty.Access.WRITE_ONLY)
 	private String creationUser;
 	
+	@Column(name="account_owner")
+	@NotNull	
+    @JsonProperty(access =  JsonProperty.Access.WRITE_ONLY)
+	private String accountOwner;
 	
+		
 	@OneToOne (mappedBy = "account" )
 	private User user;
 	
@@ -88,6 +93,14 @@ public class Account extends AbstractEntity implements Serializable{
 	public void removeTransactions(Transactions transaction) {
 		transactions.remove(transaction);
 		transaction.setUserAccount(null);
+	}
+	
+	public String getAccountOwner() {
+		return accountOwner;
+	}
+
+	public void setAccountOwner(String accountOwner) {
+		this.accountOwner = accountOwner;
 	}
 
 	@Override
